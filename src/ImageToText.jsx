@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HfInference } from "@huggingface/inference";
 
-const inference = new HfInference("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");
+const inference = new HfInference("(insert hf api)");
 
 const ImageToText = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -19,7 +19,7 @@ const ImageToText = () => {
         role: "user",
         content: [
           { type: "image_url", image_url: { url: url } },
-          { type: "text", text: "provide the google font name that the image resembles the most with no further explanation" },
+          { type: "text", text: "which google font does the image resemble the most among the following fonts:roboto,creepster,lato,pacifico.answer in one word" },
         ],
       },
     ];
